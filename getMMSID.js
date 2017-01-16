@@ -1,13 +1,15 @@
 // CRUCIAL BREAKTHROUGH - get a DOM element and display it in the page
 
-   app.component('prmServiceLinksAfter', {
+  var app = angular.module('viewCustom', ['angularLoad']);
+
+   app.component('prmServiceDetailsAfter', {
 	   bindings: { parentCtrl: '<' },
-	   controller: 'prmServiceLinksAfterController',
+	   controller: 'prmServiceDetailsAfterController',
 	   template: '<div class="aspire-lists"><a href="http://liblists.sussex.ac.uk/lcn/{{$ctrl.getMMSID()}}/lists.json?cb=AspireCallBack">Check Aspire for Reading Lists</a></div>'
 
    });
    
-app.controller('prmServiceLinksAfterController', [function(){
+app.controller('prmServiceDetailsAfterController', [function(){
 
 var vm = this;
 
