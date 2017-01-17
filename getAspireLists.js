@@ -1,39 +1,58 @@
-// CRUCIAL BREAKTHROUGH - get a DOM element and display it in the page
 // 17/01/2017 - another breakthrough. This version allows me to get the MMSID, and check Aspire using $http
+// Version saved to github
+// Now lists the Aspire lists on the display
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
    app.component('prmServiceDetailsAfter', {
 	   bindings: { parentCtrl: '<' },
-	   //controller: 'prmServiceDetailsAfterController',
 	   controller: 'DisplayAspireListsController',
-	   template: '<div class="aspire-lists"><a href="http://liblists.sussex.ac.uk/lcn/{{$ctrl.getMMSID()}}/lists.json?cb=AspireCallBack">Check Aspire for Reading Lists</a></div>'
+	   //template: '<div> <span class="bold text">Aspire lists </span>{{$ctrl.getResults()}}</div>'
+	   //template: '<div> <span class="bold text">Cited on reading lists:</span><br>{{$ctrl.getResults()}}</div>'
+	   
+	   //template: '<ul>  <li ng-repeat="x in {{$ctrl.getResults()}}" > {{ x }} </li></ul>'
+
+	   
+	   template: '<div> <span class="bold text">Cited on reading lists:</span><br>{{$ctrl.getResults()}}</div>'
+	   
      });
    
-		
-app.controller('DisplayAspireListsController', function ($scope, $http) {
+	app.controller('DisplayAspireListsController', function ($scope, $http) {
 	
-	// Get the MMSID
 	var vm = this;
 
+   // Set up an empty array ready for the Aspire lists
+   var results = [];
+   
+	// Get the MMSID
     vm.getMMSID = getMMSID;
  
     function getMMSID() {
 	     return vm.parentCtrl.item.pnx.search.addsrcrecordid[0];
         }
-      //alert(getMMSID());
 
-	// Make the call to Aspire
-   //var url = 'http://liblists.sussex.ac.uk/lcn/9963802302461/lists.json?cb=JSON_CALLBACK';
+   	// Make the call to Aspire
    var url = 'http://liblists.sussex.ac.uk/lcn/' + getMMSID() + '/lists.json?cb=JSON_CALLBACK';
    $http.jsonp(url)
-       .success(function(response) {
+       
+          .success(function(response) {
            for (var uri in response) {
-			   //alert(url);
-             console.log(uri + ": " + response[uri]);
+			 // Push them into an array
+			 results.push(uri + response[uri]);
+			 			 
            };
+	
+   	     vm.getResults = getResults;
+		
+// Trying to get a way to pass teh scope to the directive template		
+		function getResults($scope) {
+		//function getResults() {
+         // test value to work out how to get the arrays iterating in the directive template
+		 //results = 'Hello World';
+		return results;
+
+		}
+		  
       })
-    //  error(function (response) {
-		//  console.log('FAILED!!');
-      //});
+
 });
