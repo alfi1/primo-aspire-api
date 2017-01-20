@@ -1,5 +1,5 @@
-//THIS IS BLOODY IT!!
-// 18/01/2016
+// Fully working version.  20/01/2017
+// Tim Graves. University of Sussex Library
 
   var app = angular.module('viewCustom', ['angularLoad']);
 
@@ -21,10 +21,12 @@
         }
 
    	// Make the call to Aspire
-   var url = 'http://liblists.sussex.ac.uk/lcn/' + getMMSID() + '/lists.json?cb=JSON_CALLBACK';
+      var url = 'https://sussex.rl.talis.com/lcn/' + getMMSID() + '/lists.json?cb=JSON_CALLBACK';
+   
    $http.jsonp(url)
    
           .success(function(response) {
+			  			  
 			  	$scope.listsFound = response;	
       });
 
