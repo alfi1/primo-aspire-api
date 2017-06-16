@@ -12,3 +12,7 @@ By lucky chance, this recording contains the explanatory screencast that I put t
 16/06/2017: code now rewritten to work in Angular 1.6
 The May 2017 release of Primo moved from Angular 1.5 to 1.6.
 This caused the original code to stop working for three different reasons.
+
+When adapting for their own use, other sites will need to replace the whitelisted Talis Aspire URL to reflect their own Aspire tenancy.:
+The line that needs changing is:
+        .constant('AspireTrustBaseUrl', "https://sussex.rl.talis.com/")
