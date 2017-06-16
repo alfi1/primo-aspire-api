@@ -9,4 +9,6 @@ The script gets the MMSID of the item from the full display, makes a call to the
 
 23/01/2017.  A more detailed (but understandable) tour of the written, and background on how it works is at https://youtu.be/H22gPizyATc
 
-
+16/06/2017: code now rewritten to work in Angular 1.6
+The May 2017 release of Primo moved from Angular 1.5 to 1.6.
+This caused the original code to stop working for three different reasons.
