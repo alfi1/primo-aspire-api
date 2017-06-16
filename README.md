@@ -5,9 +5,9 @@ The script gets the MMSID of the item from the full display, makes a call to the
 
 20/04/2017. Talis have now made available an article on how other Primo customers can implement this integration.  https://support.talis.com/hc/en-us/articles/115002712709-Primo-Explore-Integrations-with-Talis-Aspire
 
-23/01/2017.  Put a quick demonstration video at https://youtu.be/2BFwGqlGcA8
-
-23/01/2017.  A more detailed (but understandable) tour of the written, and background on how it works is at https://youtu.be/H22gPizyATc
+05/05/2017.  I gave a talk at the Talis Insight conference, the recording of which is available at:
+ http://go.talis.com/talis-insight-europe-2017-tim-graves
+By lucky chance, this recording contains the explanatory screencast that I put together during the development process.  The original recordings were lost with a defunct Google account.
 
 16/06/2017: code now rewritten to work in Angular 1.6
 The May 2017 release of Primo moved from Angular 1.5 to 1.6.
