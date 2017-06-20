@@ -3,6 +3,9 @@ Link from Primo new ui to Talis Aspire API to display the reading lists on which
 
 The script gets the MMSID of the item from the full display, makes a call to the Aspire API, and then displays the results in Primo.
 
+A quick screencast of the end result can be seen at:
+https://drive.google.com/file/d/0B31GYM72ZWvBbHp6dGZlSlhLN3c/view
+
 20/04/2017. Talis have now made available an article on how other Primo customers can implement this integration.  https://support.talis.com/hc/en-us/articles/115002712709-Primo-Explore-Integrations-with-Talis-Aspire
 
 05/05/2017.  I gave a talk at the Talis Insight conference, the recording of which is available at:
