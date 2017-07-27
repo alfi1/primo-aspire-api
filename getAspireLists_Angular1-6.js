@@ -3,18 +3,17 @@
 // Addresses the Trust issue by whitelisting the Talis url
 // Changes the format in which a callback is declared
 // Replaces the deprecated .success
+// 27/07/2017 - tweaked by Ex Libris to work on Internet Explorer. TG
 
 
 var app = angular.module('viewCustom', ['angularLoad'])
 
 // Whitelisting
-.constant('AspireTrustBaseUrl', "https://sussex.rl.talis.com/")
-
-.config(['$sceDelegateProvider', 'AspireTrustBaseUrl', ($sceDelegateProvider, AspireTrustBaseUrl) => {
-    let urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
-    urlWhitelist.push(`${AspireTrustBaseUrl}**`); 
-    $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
-  }]);
+.constant('AspireTrustBaseUrl', "https://sussex.rl.talis.com/").config(['$sceDelegateProvider', 'AspireTrustBaseUrl', function ($sceDelegateProvider, AspireTrustBaseUrl) {
+  var urlWhitelist = $sceDelegateProvider.resourceUrlWhitelist();
+  urlWhitelist.push(AspireTrustBaseUrl + '**');
+  $sceDelegateProvider.resourceUrlWhitelist(urlWhitelist);
+}]);
 
 // End of whitelisting
   
