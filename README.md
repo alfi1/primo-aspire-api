@@ -19,3 +19,6 @@ This caused the original code to stop working for three different reasons.
 When adapting for their own use, other sites will need to replace the whitelisted Talis Aspire URL to reflect their own Aspire tenancy.:
 The line that needs changing is:
         .constant('AspireTrustBaseUrl', "https://sussex.rl.talis.com/")
+
+27/07/2017
+Code adapted to also work with Internet Explorer.
