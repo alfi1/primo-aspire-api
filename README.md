@@ -22,3 +22,9 @@ The line that needs changing is:
 
 27/07/2017
 Code adapted to also work with Internet Explorer.
+
+29/04/2020
+Rewrote the code to check all local control numbers to get the correct MMSID. 
+Before, the code just got the forst LCN from the list and checked that against the Aspire API.
+This was missing items whose MMSID was in a lower position on the list of LCNs.
+The changes are in aspire_rewrite_20200429.js
